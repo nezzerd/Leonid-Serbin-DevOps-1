@@ -1,0 +1,2 @@
+Service 'docker': active
+Error count in /var/log/syslog during the last hour: 0

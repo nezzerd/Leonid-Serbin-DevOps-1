@@ -1,0 +1,33 @@
+services:
+  app:
+    image: nginx:1.27-alpine
+    container_name: devops-compose-app
+    restart: unless-stopped
+    volumes:
+      - ./app/index.html:/usr/share/nginx/html/index.html:ro
+    networks:
+      - compose_net
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1/ || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: devops-compose-proxy
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - compose_net
+
+networks:
+  compose_net:
+    name: devops_compose_net
+    driver: bridge
