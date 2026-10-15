@@ -1,0 +1,49 @@
+
+PLAY [Prepare Ubuntu host for Docker workloads] ********************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [devops_vm]
+
+TASK [Verify supported operating system] ***************************************
+ok: [devops_vm] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [Refresh apt cache] *******************************************************
+ok: [devops_vm]
+
+TASK [Install packages required for Docker repository] *************************
+ok: [devops_vm]
+
+TASK [Create apt keyring directory] ********************************************
+ok: [devops_vm]
+
+TASK [Install Docker repository key] *******************************************
+ok: [devops_vm]
+
+TASK [Configure the official Docker apt repository] ****************************
+ok: [devops_vm]
+
+TASK [Install Docker Engine and Compose plugin] ********************************
+ok: [devops_vm]
+
+TASK [Ensure Docker service is enabled and running] ****************************
+ok: [devops_vm]
+
+TASK [Create deployer account] *************************************************
+ok: [devops_vm]
+
+TASK [Grant deployer passwordless sudo] ****************************************
+ok: [devops_vm]
+
+TASK [Install deployer public key when supplied] *******************************
+skipping: [devops_vm]
+
+TASK [Add managed users to docker group] ***************************************
+ok: [devops_vm] => (item=student)
+ok: [devops_vm] => (item=deployer)
+
+PLAY RECAP *********************************************************************
+devops_vm                  : ok=12   changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+

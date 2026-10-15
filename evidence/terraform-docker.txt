@@ -1,0 +1,14 @@
+NAMES             STATUS                            PORTS
+devops-tf-nginx   Up 9 seconds (health: starting)   0.0.0.0:8088->80/tcp
+{"82e0849f9931eded99c6d4031d1d637abbbb760095ecb63cfb9f74e27f328618":{"Name":"devops-tf-nginx","EndpointID":"b6328bc5db53ccef43f95492b53f2e86c7d96349814f325b71b3f4a7b238fb9c","MacAddress":"a2:ee:09:80:0e:4b","IPv4Address":"172.18.0.2/16","IPv6Address":""}}
+[
+    {
+        "CreatedAt": "2026-10-15T21:13:26Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/devops_nginx_html/_data",
+        "Name": "devops_nginx_html",
+        "Options": null,
+        "Scope": "local"
+    }
+]

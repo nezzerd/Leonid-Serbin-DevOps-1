@@ -1,0 +1,4 @@
+# The defaults target the supplied VM. Uncomment only if you need another host.
+# docker_host = "ssh://student@111.88.162.96:22"
+# docker_ssh_opts = ["-o", "StrictHostKeyChecking=accept-new", "-o", "IdentityFile=/Users/you/.ssh/id_ed25519"]
+# nginx_host_port = 8088
